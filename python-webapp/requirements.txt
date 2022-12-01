@@ -1,0 +1,9 @@
+tornado
+matplotlib
+numpy
+pandas
+Pillow
+scikit-build
+torch==1.13
+wandb
+scikit-image
