@@ -18,6 +18,7 @@ import hmac
 import hashlib
 import base64
 import sat_detect
+import sat_diff
 from PIL import Image
 from matplotlib import cm
 import numpy as np
@@ -116,7 +117,41 @@ class satDetectHandler(RestResource):
             encodedImage = base64.b64encode(f.read()) 
 """
         
+class satDetectDiffHandler(RestResource):
 
+    def post(self):
+        body = json.loads(self.request.body)
+
+        if "confidence" not in body:
+            self.write_error(400, errorCode=40001, message='confidence not found')
+        if 'imageId1' not in body:
+            self.write_error(400, errorCode=40001, message='image 1 not found')
+        if 'imageId2' not in body:
+            self.write_error(400, errorCode=40001, message='image 2 not found')
+        if 'size' not in body:
+            self.write_error(400, errorCode=40001, message='size not found')
+        
+        conf = body["confidence"]
+        size = body ["size"]
+        id1 = body ["imageId1"]
+        id2 = body ["imageId2"]
+
+        img1 = f"images/{id1}"
+        img2 = f"images/{id2}"
+
+        result = sat_diff.detectDiff(img1,img2,conf,size)
+
+        self.write(json.dumps(result))
+
+"""
+       im = Image.fromarray(np.uint8(result.render()[0]))
+
+        im.save("temp/tempImage.jpg")
+
+        with open("temp/tempImage.jpg","rb") as f:
+            encodedImage = base64.b64encode(f.read()) 
+"""
+        
 
 class satImageHandler(RestResource):
 
@@ -137,7 +172,7 @@ backend = tornado.web.Application([
     (r"/detect", satDetectHandler),
     (r"/image", satImageHandler),
     #(r"/detect-general", satDetectGeneral),
-    #(r"/detect-diff", satDetectDiff),
+    (r"/detectDiff", satDetectDiffHandler),
     #(r"/detect-sar", satDetectSar),
     #(r"/stitch", satStitch),
 ])
