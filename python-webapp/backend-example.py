@@ -14,11 +14,8 @@ from tornado.web import Finish
 from datetime import datetime
 import json
 import uuid
-import hmac
-import hashlib
 import base64
-import sat_detect
-import sat_diff
+import sat_utils
 from PIL import Image
 from matplotlib import cm
 import numpy as np
@@ -35,29 +32,6 @@ APPLICATION_KEY = 'someUserName'
 APPLICATION_SECRET = 'INSERT_YOUR_APP_SECRET_HERE'
 
 userBase = dict()
-
-# Generate Sinch authentication ticket. Implementation of:
-# http://www.sinch.com/docs/rest-apis/api-documentation/#Authorization
-def getAuthTicket(user): 
-    userTicket = {
-        'identity': {'type': 'username', 'endpoint': user['username']},
-        'expiresIn': 3600, #1 hour expiration time of session when created using this ticket
-        'applicationKey': APPLICATION_KEY,
-        'created': datetime.utcnow().isoformat()
-    }
-
-    userTicketJson = json.dumps(userTicket).replace(" ", "")
-    userTicketBase64 = base64.b64encode(userTicketJson)
-
-    # TicketSignature = Base64 ( HMAC-SHA256 ( ApplicationSecret, UTF8 ( UserTicketJson ) ) )
-    digest = hmac.new(base64.b64decode(
-        APPLICATION_SECRET), msg=userTicketJson, digestmod=hashlib.sha256).digest()
-    signature = base64.b64encode(digest)
-
-    # UserTicket = TicketData + ":" + TicketSignature
-    signedUserTicket = userTicketBase64 + ':' + signature
-    return {'userTicket': signedUserTicket}
-
 
 # REST endpoints
 class PingHandler(tornado.web.RequestHandler):
@@ -108,7 +82,7 @@ class satDetectHandler(RestResource):
 
         img = f"images/{id}"
 
-        result = sat_detect.detect(img,conf,size)
+        result = sat_utils.detect(img,conf,size)
 
         self.write(json.dumps(result))
 """
@@ -142,7 +116,7 @@ class satDetectDiffHandler(RestResource):
         img1 = f"images/{id1}"
         img2 = f"images/{id2}"
 
-        result = sat_diff.detectDiff(img1,img2,conf,size)
+        result = sat_utils.detectDiff(img1,img2,conf,size)
 
         self.write(json.dumps(result))
 
@@ -236,10 +210,13 @@ class Application(tornado.web.Application):
         setup_swagger(self._routes)
         super(Application, self).__init__(self._routes, **settings)
 
-      
+
 if __name__ == "__main__":
 
     print ("Starting Sinch demo backend on port: \033[1m" + str(HTTP_PORT) +'\033[0m')
+    print ("--- LOG ---")
+    backend.listen(HTTP_PORT)
+    tornado.ioloop.IOLoop.instance().start()
     #print ("Application key: \033[1m" + APPLICATION_KEY +'\033[0m')
     #print ("Post JSON object to \033[1m/register\033[0m to create user")
     #print ("Post JSON object to \033[1m/login\033[0m to retrieve authentication token")
@@ -250,10 +227,8 @@ if __name__ == "__main__":
     app.listen(port=9001)
     tornado.ioloop.IOLoop.current().start()
     
-    backend.listen(HTTP_PORT)
+    
 
-    print ("--- LOG ---")
-
-    tornado.ioloop.IOLoop.instance().start()
+  
 
     

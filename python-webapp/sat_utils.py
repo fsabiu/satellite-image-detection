@@ -14,6 +14,28 @@ import random
 from IPython.display import Image, clear_output
 import matplotlib.pyplot as plt
 
+
+# Main
+
+def detect(img, conf, size) :
+
+    model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
+    model.conf = float(conf)
+
+    im1 = img
+
+    results = model(im1, size=int(size))
+
+    resDict = {}
+    for key, value in results.names.items():
+        resDict[value] = []
+        
+    for pred in results.pred[0]:
+        resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
+
+    return resDict
+
+
 def Appears(x, y, offset):
     for el in y:
         el_check = True
@@ -53,51 +75,3 @@ def detectDiff (im1,im2,conf,size) :
             resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
     
     return resDict
- 
-""" # Main
-if __name__ == "__main__":
-    
-    if(len(sys.argv) < 6):
-        print("Invalid parameters.")
-        print("Usage: python " + sys.argv[0] + " path/img1.jpg path/img2.jpg path/output/ conf img_size")
-        exit(1)
-
-    if(float(sys.argv[4])< 0 or float(sys.argv[4])>1):
-        print("Invalid conf parameter. Must be between 0 and 1.")
-        exit(1)
-    
-    if(int(sys.argv[5])< 0):
-          print("Invalid img_size parameter. Must be greater than 0")
-          exit(1)
-
-    print(sys.argv[1])
-    print(sys.argv[2])
-
-    model = torch.hub.load('./yolov5', 'custom', '/home/oracle/satellite-imgs/exp2/weights/best.pt', source= 'local')
-    model.conf = float(sys.argv[4])
-
-    im1 = sys.argv[1]
-    im2 = sys.argv[2]
-
-    results = model([im1, im2], size=int(sys.argv[5]))
-
-    # New objects
-    new = [results.pred[1][i] for i, x in enumerate(results.pred[1][:, 0:4]) if not Appears(x, results.pred[0][:, 0:4], 20)]
-
-    # Old objects
-    old = [results.pred[0][i] for i, x in enumerate(results.pred[0][:, 0:4]) if not Appears(x, results.pred[1][:, 0:4], 20)]
-
-    annotations = []
-    if(len(new)>0):
-        annotations = annotations + new
-    if(len(old)>0):
-        annotations = annotations + old
-    if(len(annotations)>0):
-        results.pred[1] = torch.stack(annotations)
-
-    # Checks if new or old != []
-    #results.pred[1] = torch.cat([new_items, old_items])
-
-    # Results save
-    results.save(save_dir=str(sys.argv[3]))
- """
