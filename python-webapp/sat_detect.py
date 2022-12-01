@@ -26,7 +26,14 @@ def detect(img, conf, size) :
 
     results = model(im1, size=int(size))
 
-    return results
+    resDict = {}
+    for key, value in results.names.items():
+        resDict[value] = []
+        
+    for pred in results.pred[0]:
+        resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
+
+    return resDict
     # Results save
     #results.save(save_dir=str(sys.argv[2]))
 

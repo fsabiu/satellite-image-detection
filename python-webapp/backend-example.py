@@ -106,14 +106,16 @@ class satDetectHandler(RestResource):
 
         result = sat_detect.detect(img,conf,size)
 
-        im = Image.fromarray(np.uint8(result.render()[0]))
+        self.write(json.dumps(result))
+"""
+       im = Image.fromarray(np.uint8(result.render()[0]))
 
         im.save("temp/tempImage.jpg")
 
         with open("temp/tempImage.jpg","rb") as f:
-            encodedImage = base64.b64encode(f.read())
-
-        self.write(json.dumps({"result" : encodedImage.decode('ascii') }))
+            encodedImage = base64.b64encode(f.read()) 
+"""
+        
 
 
 class satImageHandler(RestResource):
