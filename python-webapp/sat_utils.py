@@ -13,6 +13,8 @@ from pathlib import Path
 import random
 from IPython.display import Image, clear_output
 import matplotlib.pyplot as plt
+from skimage.metrics import structural_similarity
+import cv2
 
 
 # Main
@@ -25,8 +27,8 @@ def detect(imgs, conf, size) :
  
     resDicts = []
 
-    for i in len(imgs):
-        resDicts[i] = {}
+    for i in range(len(imgs)):
+        resDicts.append({})
         for key, value in results.names.items():
             resDicts[i][value] = []
 
@@ -75,3 +77,29 @@ def detectDiff (im1,im2,conf,size) :
             resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
     
     return resDict
+
+
+def detectAllDiff (img1,img2, minArea) :
+
+    im1 = cv2.imread(img1)
+    im2 = cv2.imread(img2)
+    # Convert images to grayscale
+    im1_gray = cv2.cvtColor(im1, cv2.COLOR_BGR2GRAY)
+    im2_gray = cv2.cvtColor(im2, cv2.COLOR_BGR2GRAY)
+    # Compute SSIM between the two images
+    (score, diff) = structural_similarity(im1_gray, im2_gray, full=True)
+    diff = (diff * 255).astype("uint8")
+    diff_box = cv2.merge([diff, diff, diff])
+    thresh = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
+    contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours = contours[0] if len(contours) == 2 else contours[1]
+    filled_im2 = im2.copy()
+    rects = []
+    for c in contours:
+        area = cv2.contourArea(c)
+        if area > minArea:
+            (x,y,w,h) = cv2.boundingRect(c) # x,y,w,h
+            rects.append({'x': x, 'y': y, 'w': w, 'h': h})
+    
+    return rects
+

@@ -8,3 +8,4 @@ scikit-build
 torch==1.13
 wandb
 scikit-image
+opencv-python

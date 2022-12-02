@@ -82,7 +82,7 @@ class satDetectHandler(RestResource):
 
         imgs = []
         for img in ids:
-            img.append(f"images/{id}")
+            imgs.append(f"images/{img}")
 
         result = sat_utils.detect(imgs,conf,size)
 
@@ -131,6 +131,29 @@ class satDetectDiffHandler(RestResource):
             encodedImage = base64.b64encode(f.read()) 
 """
         
+class satDetectAllDiffHandler(RestResource):
+
+    def post(self):
+        body = json.loads(self.request.body)
+
+        if "minArea" not in body:
+            self.write_error(400, errorCode=40001, message='minArea not found')
+        if 'imageId1' not in body:
+            self.write_error(400, errorCode=40001, message='image 1 not found')
+        if 'imageId2' not in body:
+            self.write_error(400, errorCode=40001, message='image 2 not found')
+
+        
+        minArea = body["minArea"]
+        id1 = body ["imageId1"]
+        id2 = body ["imageId2"]
+
+        img1 = f"images/{id1}"
+        img2 = f"images/{id2}"
+
+        result = sat_utils.detectAllDiff(img1,img2,minArea)
+
+        self.write(json.dumps(result))
 
 class satImageHandler(RestResource):
 
@@ -144,13 +167,13 @@ class satImageHandler(RestResource):
         with open(path, "wb") as fh:
             fh.write(base64.b64decode(body["image"]))
         
-        self.write(json.dumps(f"id:{name}"))
+        self.write(json.dumps({"id":name}))
 
 backend = tornado.web.Application([
     (r"/ping", PingHandler),
     (r"/detect", satDetectHandler),
     (r"/image", satImageHandler),
-    #(r"/detect-general", satDetectGeneral),
+    (r"/detectAllDiff", satDetectAllDiffHandler),
     (r"/detectDiff", satDetectDiffHandler),
     #(r"/detect-sar", satDetectSar),
     #(r"/stitch", satStitch),
