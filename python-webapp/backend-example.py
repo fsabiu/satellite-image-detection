@@ -71,18 +71,20 @@ class satDetectHandler(RestResource):
 
         if "confidence" not in body:
             self.write_error(400, errorCode=40001, message='confidence not found')
-        if 'imageId' not in body:
+        if 'imagesId' not in body:
             self.write_error(400, errorCode=40001, message='image not found')
         if 'size' not in body:
             self.write_error(400, errorCode=40001, message='size not found')
         
         conf = body["confidence"]
         size = body ["size"]
-        id = body ["imageId"]
+        ids = body ["imagesId"]
 
-        img = f"images/{id}"
+        imgs = []
+        for img in ids:
+            img.append(f"images/{id}")
 
-        result = sat_utils.detect(img,conf,size)
+        result = sat_utils.detect(imgs,conf,size)
 
         self.write(json.dumps(result))
 """

@@ -20,7 +20,7 @@ class ImageHandler(tornado.web.RequestHandler):
         ---
         tags:
         - Satellite images
-        summary: Detect object(s)
+        summary: Upload image
         description: This function is called to upload one images.
         operationId: sat.api.image
         produces:

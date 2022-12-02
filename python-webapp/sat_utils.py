@@ -17,23 +17,23 @@ import matplotlib.pyplot as plt
 
 # Main
 
-def detect(img, conf, size) :
-
+def detect(imgs, conf, size) :
     model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
     model.conf = float(conf)
 
-    im1 = img
+    results = model(imgs, size=int(size))
+ 
+    resDicts = []
 
-    results = model(im1, size=int(size))
+    for i in len(imgs):
+        resDicts[i] = {}
+        for key, value in results.names.items():
+            resDicts[i][value] = []
 
-    resDict = {}
-    for key, value in results.names.items():
-        resDict[value] = []
-        
-    for pred in results.pred[0]:
-        resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
+        for pred in results.pred[i]:
+            resDicts[i][results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
 
-    return resDict
+    return resDicts
 
 
 def Appears(x, y, offset):
