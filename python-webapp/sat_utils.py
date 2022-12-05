@@ -15,6 +15,10 @@ from IPython.display import Image, clear_output
 import matplotlib.pyplot as plt
 from skimage.metrics import structural_similarity
 import cv2
+from imutils import paths
+import argparse
+import imutils
+import base64
 
 
 # Main
@@ -103,3 +107,32 @@ def detectAllDiff (img1,img2, minArea) :
     
     return rects
 
+
+def stitch (img1,img2) :
+    img1 = cv2.imread(cv2.samples.findFile(img1))
+    img2 = cv2.imread(cv2.samples.findFile(img2))
+    
+    imgs = [img1,img2]
+
+    if imutils.is_cv3(): # OpenCV 3
+        stitcher = cv2.createStitcher()
+    else: # OpenCV 4
+        stitcher = cv2.Stitcher_create() 
+
+    (status, stitched) = stitcher.stitch(imgs) # call method to stitch images
+
+    print("Status: " + str(status))
+
+    # evaluate status and display image if successfully stitched
+    if status == 0: # status is 0 for successful operation
+        cv2.imwrite("./stitched/output.jpg", stitched) # write to output file
+        #cv2.imshow("Stitched", stitched) # display stitched image
+        cv2.waitKey(0)
+
+    else: # status is 1, 2 or 3 depending on error (see documentation)
+        print("[INFO] image stitching failed ({})".format(status)) # failure message
+
+    with open("./stitched/output.jpg", "rb") as f:
+        encoded_image = base64.b64encode(f.read()).decode('utf-8')
+
+    return encoded_image
