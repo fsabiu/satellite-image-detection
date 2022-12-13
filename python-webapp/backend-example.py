@@ -188,13 +188,33 @@ class satStitchHandler(RestResource):
             
         self.write(json.dumps({"result":result}))
 
+
+""" class satDetectSar(RestResource):
+
+    def post(self):
+        body = json.loads(self.request.body)
+        if 'imageId1' not in body:
+            self.write_error(400, errorCode=40001, message='image 1 not found')
+        if 'imageId2' not in body:
+            self.write_error(400, errorCode=40001, message='image 2 not found')
+        imgId1 = body ["imageId1"]
+        imgId2 = body ["imageId2"]
+        path = f"images/"
+
+        image1 = path + imgId1
+        image2 = path + imgId2
+
+        result = sat_utils.detectSAR(image1,image2)
+            
+        self.write(json.dumps({"result":result})) """
+
 backend = tornado.web.Application([
     (r"/ping", PingHandler),
     (r"/detect", satDetectHandler),
     (r"/image", satImageHandler),
     (r"/detectAllDiff", satDetectAllDiffHandler),
     (r"/detectDiff", satDetectDiffHandler),
-    #(r"/detect-sar", satDetectSar),
+    #(r"/detectSar", satDetectSar),
     (r"/stitch", satStitchHandler),
 ])
 
