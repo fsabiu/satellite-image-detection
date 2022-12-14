@@ -71,7 +71,7 @@ class DetectHandler(tornado.web.RequestHandler):
           schema:
             type: object
             properties:
-              imageId:
+              imageData:
                 type: string
               confidence:
                 type: number
@@ -79,16 +79,52 @@ class DetectHandler(tornado.web.RequestHandler):
               size:
                 type: number
                 format: int
+              format:
+                type: string
         responses:
-        "200":
-          description: successful operation
+            200:
+                description: Successful
+                schema:
+                  type: object
+                  properties:
+                    objects:
+                      type: array
+                      items:
+                        properties:
+                          class:
+                            type: string
+                          confidence:
+                            type: number
+                            format: float
+                          bounds:
+                            type: object
+                            properties:
+                              x1:
+                                type: number
+                                format: float
+                              y1:
+                                type: number
+                                format: float
+                              x2:
+                                type: number
+                                format: float
+                              y2:
+                                type: number
+                                format: float
+                        
         """
 
+"""
+properties:
+    class: string
+    bounds: object
+    confidence: number
+"""
 
 
 class Application(tornado.web.Application):
     _routes = [
-        tornado.web.url(r"/image", ImageHandler, name="Image"),
+        #tornado.web.url(r"/image", ImageHandler, name="Image"),
         tornado.web.url(r"/detect", DetectHandler, name="Detect"),
     ]
     def __init__(self):

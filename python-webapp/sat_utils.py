@@ -22,7 +22,25 @@ import base64
 
 
 # Main
-def detect(imgs, conf, size) :
+def detect(img, conf, size) :
+    model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
+    model.conf = float(conf)
+
+    results = model(img, size=int(size))
+    
+    resDicts = {}
+    resultList = []
+
+    print(results.pred)
+
+    for pred in results.pred[0]:
+        resultList.append({"class" : results.names[int(pred[5])] , 'bounds': {"x1" : pred[0].tolist(),"y1" : pred[1].tolist(),"x2" : pred[2].tolist(),"y2" : pred[3].tolist()}, 'confidence': float(pred[4])}) 
+    
+    resDicts["objects"] = resultList
+    
+    return resDicts
+
+""" def detect(imgs, conf, size) :
     model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
     model.conf = float(conf)
 
@@ -37,7 +55,7 @@ def detect(imgs, conf, size) :
             resultList.append({"class" : results.names[int(pred[5])] , 'bounds': {"x1" : pred[0].tolist(),"y1" : pred[1].tolist(),"x2" : pred[2].tolist(),"y2" : pred[3].tolist()}, 'confidence': float(pred[4])}) 
         resDicts.append({imgs[i] : {"objects" : resultList}})
     
-    return resDicts
+    return resDicts """
 
 """ def detect(imgs, conf, size) :
     model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')

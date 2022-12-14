@@ -24,7 +24,7 @@ import tornado.web
 #from tornado_swagger.setup import setup_swagger
 
 # Cors
-import tornado.httpserver
+
 
 # Port
 HTTP_PORT = 9001
@@ -43,9 +43,10 @@ class PingHandler(tornado.web.RequestHandler):
         self.set_header("Content-Type", "application/json; charset=UTF-8")
         # Cors (only in development, change in production)
         # Not safe for production
-        origin = self.request.headers.get('Origin', '*') # use current requesting origin
-        self.set_header("Access-Control-Allow-Origin", origin)
-        self.set_header("Access-Control-Allow-Headers", "*, content-type, authorization, x-requested-with, x-xsrftoken, x-csrftoken")
+        #origin = self.request.headers.get('Origin', '*') # use current requesting origin
+        #self.set_header("Access-Control-Allow-Origin", origin)
+        self.set_header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+        #self.set_header("Access-Control-Allow-Headers", "*, content-type, authorization, x-requested-with, x-xsrftoken, x-csrftoken")
         self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE, PUT, PATCH')
         self.set_header('Access-Control-Expose-Headers', 'content-type, location, *, set-cookie')
         self.set_header('Access-Control-Request-Headers', '*')
@@ -63,13 +64,13 @@ class RestResource(tornado.web.RequestHandler):
 
         # Cors (only in development, change in production)
         # Not safe for production
-        #origin = self.request.headers.get('Origin', '*') # use current requesting origin
-        #self.set_header("Access-Control-Allow-Origin", origin)
-        """ self.set_header("Access-Control-Allow-Headers", "*, content-type, authorization, x-requested-with, x-xsrftoken, x-csrftoken")
+        origin = self.request.headers.get('Origin', '*') # use current requesting origin
+        self.set_header("Access-Control-Allow-Origin", origin)
+        self.set_header("Access-Control-Allow-Headers", "*, content-type, authorization, x-requested-with, x-xsrftoken, x-csrftoken")
         self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE, PUT, PATCH')
         self.set_header('Access-Control-Expose-Headers', 'content-type, location, *, set-cookie')
         self.set_header('Access-Control-Request-Headers', '*')
-        self.set_header('Access-Control-Allow-Credentials', 'true') """
+        self.set_header('Access-Control-Allow-Credentials', 'true')
         
 
     def write_error(self, status_code, **kwargs):
@@ -86,39 +87,6 @@ class RestResource(tornado.web.RequestHandler):
         raise Finish()
 
 class satDetectHandler(RestResource):
-    def option(self):
-        body = json.loads(self.request.body)
-
-        #if "confidence" not in body:
-        #    self.write_error(400, errorCode=40001, message='confidence not found')
-        if 'imageData' not in body:
-            self.write_error(400, errorCode=40001, message='imageData not found')
-        #if 'size' not in body:
-        #    self.write_error(400, errorCode=40001, message='size not found')
-        #if 'format' not in body:
-        #    self.write_error(400, errorCode=40001, message='format not found')
-        
-        #conf = body["confidence"]
-        #size = body ["size"]
-        image = body ["imageData"]
-
-        ## from imageHandler
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
-        frmt = "png"
-        name = f"img_{timestamp}.{frmt}"
-        path = f"images/{name}"
-
-        with open(path, "wb") as fh:
-            fh.write(base64.b64decode(image))
-
-        im = Image.open(path)
-        w, h = im.size
-
-        size = max(w,h)
-        conf = 0.5
-        result = sat_utils.detect(path,conf,size)
-
-        self.write(json.dumps(result))
 
     def post(self):
         body = json.loads(self.request.body)
@@ -355,7 +323,7 @@ class ExampleHandler(tornado.web.RequestHandler):
         """
         print("I'm the example")
 
-""" class Application(tornado.web.Application):
+class Application(tornado.web.Application):
     _routes = [
         tornado.web.url(r"/api/example", ExampleHandler, name="example"),
     ]
@@ -363,20 +331,14 @@ class ExampleHandler(tornado.web.RequestHandler):
         settings = {"debug": True}
         setup_swagger(self._routes)
         super(Application, self).__init__(self._routes, **settings)
- """
-class RequestHandler(tornado.web.RequestHandler):
-    def get(self):
-        # Handle GET request
-        self.write("Hello, world!")
+
 
 if __name__ == "__main__":
 
     print ("Starting Sinch demo backend on port: \033[1m" + str(HTTP_PORT) +'\033[0m')
     print ("--- LOG ---")
-
-    #backend.listen(HTTP_PORT)
-    #tornado.ioloop.IOLoop.instance().start()
-    
+    backend.listen(HTTP_PORT)
+    tornado.ioloop.IOLoop.instance().start()
     #print ("Application key: \033[1m" + APPLICATION_KEY +'\033[0m')
     #print ("Post JSON object to \033[1m/register\033[0m to create user")
     #print ("Post JSON object to \033[1m/login\033[0m to retrieve authentication token")
@@ -386,14 +348,6 @@ if __name__ == "__main__":
     #app = Application()
     #app.listen(port=9001)
     #tornado.ioloop.IOLoop.current().start()
-
-    server = tornado.httpserver.HTTPServer( backend,
-    ssl_options={
-        "certfile": "cert/cert.pem",
-        "keyfile": "cert/ck.pem",
-    })
-    server.listen(9001)
-    tornado.ioloop.IOLoop.instance().start()
     
     
 
