@@ -101,6 +101,37 @@ def detectDiff (im1,im2,conf,size) :
     old = [results.pred[0][i] for i, x in enumerate(results.pred[0][:, 0:4]) if not Appears(x, results.pred[1][:, 0:4], 20)]
 
     resDict = {}
+    resultList = []
+
+    annotations = []
+    if(len(new)>0):
+        annotations = annotations + new
+    if(len(old)>0):
+        annotations = annotations + old
+        
+    if(len(annotations)>0):
+        changes = torch.stack(annotations)
+        for pred in changes:
+            #resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
+            resultList.append({"class" : results.names[int(pred[5])] , 'bounds': {"x1" : pred[0].tolist(),"y1" : pred[1].tolist(),"x2" : pred[2].tolist(),"y2" : pred[3].tolist()}, 'confidence': float(pred[4])}) 
+
+    resDict["objects"] = resultList
+    return resDict
+
+""" def detectDiff (im1,im2,conf,size) :
+
+    model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
+    model.conf = float(conf)
+
+    results = model([im1, im2], size=int(size))
+
+    # New objects
+    new = [results.pred[1][i] for i, x in enumerate(results.pred[1][:, 0:4]) if not Appears(x, results.pred[0][:, 0:4], 20)]
+
+    # Old objects
+    old = [results.pred[0][i] for i, x in enumerate(results.pred[0][:, 0:4]) if not Appears(x, results.pred[1][:, 0:4], 20)]
+
+    resDict = {}
     for key, value in results.names.items():
         resDict[value] = []
     annotations = []
@@ -114,8 +145,7 @@ def detectDiff (im1,im2,conf,size) :
         for pred in changes:
             resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
     
-    return resDict
-
+    return resDict """
 
 def detectAllDiff (img1,img2, minArea) :
 

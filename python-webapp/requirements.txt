@@ -2,6 +2,7 @@ tornado
 tornado_swagger
 matplotlib
 numpy
+flask_api
 pandas
 Pillow
 scikit-build
