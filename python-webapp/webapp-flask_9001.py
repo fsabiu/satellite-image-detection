@@ -169,16 +169,16 @@ def detectSar():
     frmt = "png"
     name1 = f"img_{timestamp}_1.{frmt}"
     name2 = f"img_{timestamp}_2.{frmt}"
-    #path1 = f"images/{name1}"
-    #path2 = f"images/{name2}"
+    path1 = f"images/{name1}"
+    path2 = f"images/{name2}"
 
-    path1 = "/home/oracle/satellite-imgs/Unsupervised-Change-Detection/Data/Dubai_11272000.jpg"
-    path2 = "/home/oracle/satellite-imgs/Unsupervised-Change-Detection/Data/Dubai_11122012.jpg"
+    #path1 = "/home/oracle/satellite-imgs/Unsupervised-Change-Detection/Data/Dubai_11272000.jpg"
+    #path2 = "/home/oracle/satellite-imgs/Unsupervised-Change-Detection/Data/Dubai_11122012.jpg"
 
-    """ with open(path1, "wb") as fh:
+    with open(path1, "wb") as fh:
         fh.write(base64.b64decode(image1))
     with open(path2, "wb") as fh:
-        fh.write(base64.b64decode(image2)) """
+        fh.write(base64.b64decode(image2))
 
     result = sat_utils.detectSAR(path1,path2)
 
