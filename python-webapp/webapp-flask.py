@@ -20,6 +20,11 @@ app.config["DEBUG"] = True
 
 
 debugpy.breakpoint()
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify("pong"), status.HTTP_200_OK
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     return '''<h1>Distant Reading Archive</h1>
@@ -90,5 +95,94 @@ def detectDiff():
     result = sat_utils.detectDiff(path1,path2,conf,size)
 
     return jsonify(result), status.HTTP_200_OK
+
+@app.route('/detectAllDiff', methods=['POST'])
+def detectAllDiff():
+    # Default minArea
+    minArea = 40
+    body = request.get_json(force=True)
+    if 'image1' not in body:
+        return jsonify({'response': 'image1 missing'}), status.HTTP_400_BAD_REQUEST
+    if 'image2' not in body:
+        return jsonify({'response': 'image2 missing'}), status.HTTP_400_BAD_REQUEST
+    if 'minArea' in body:
+        minArea = body["minArea"]
+
+    image1 = body ["image1"]
+    image2 = body ["image2"]
+
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+    frmt = "png"
+    name1 = f"img_{timestamp}_1.{frmt}"
+    name2 = f"img_{timestamp}_2.{frmt}"
+    path1 = f"images/{name1}"
+    path2 = f"images/{name2}"
+    
+    with open(path1, "wb") as fh:
+        fh.write(base64.b64decode(image1))
+    with open(path2, "wb") as fh:
+        fh.write(base64.b64decode(image2))
+
+    result = sat_utils.detectAllDiff(path1,path2,minArea)
+
+    return jsonify(result), status.HTTP_200_OK
+
+@app.route('/stitch', methods=['POST'])
+def stitch():
+    body = request.get_json(force=True)
+    if 'image1' not in body:
+        return jsonify({'response': 'image1 missing'}), status.HTTP_400_BAD_REQUEST
+    if 'image2' not in body:
+        return jsonify({'response': 'image2 missing'}), status.HTTP_400_BAD_REQUEST
+
+    image1 = body ["image1"]
+    image2 = body ["image2"]
+
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+    frmt = "png"
+    name1 = f"img_{timestamp}_1.{frmt}"
+    name2 = f"img_{timestamp}_2.{frmt}"
+    path1 = f"images/{name1}"
+    path2 = f"images/{name2}"
+
+    with open(path1, "wb") as fh:
+        fh.write(base64.b64decode(image1))
+    with open(path2, "wb") as fh:
+        fh.write(base64.b64decode(image2))
+
+    result = sat_utils.stitch(path1,path2)
+
+    return jsonify(result), status.HTTP_200_OK
+
+@app.route('/detectSarDiff', methods=['POST'])
+def detectSar():
+    body = request.get_json(force=True)
+    if 'image1' not in body:
+        return jsonify({'response': 'image1 missing'}), status.HTTP_400_BAD_REQUEST
+    if 'image2' not in body:
+        return jsonify({'response': 'image2 missing'}), status.HTTP_400_BAD_REQUEST
+
+    image1 = body ["image1"]
+    image2 = body ["image2"]
+
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+    frmt = "png"
+    name1 = f"img_{timestamp}_1.{frmt}"
+    name2 = f"img_{timestamp}_2.{frmt}"
+    #path1 = f"images/{name1}"
+    #path2 = f"images/{name2}"
+
+    path1 = "/home/oracle/satellite-imgs/Unsupervised-Change-Detection/Data/Dubai_11272000.jpg"
+    path2 = "/home/oracle/satellite-imgs/Unsupervised-Change-Detection/Data/Dubai_11122012.jpg"
+
+    """ with open(path1, "wb") as fh:
+        fh.write(base64.b64decode(image1))
+    with open(path2, "wb") as fh:
+        fh.write(base64.b64decode(image2)) """
+
+    result = sat_utils.detectSAR(path1,path2)
+
+    return jsonify(result), status.HTTP_200_OK
+
 
 app.run(host='0.0.0.0', port=8888, debug=True, ssl_context=('cert/cert.pem', 'cert/ck.pem'))

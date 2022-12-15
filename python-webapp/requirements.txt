@@ -12,4 +12,4 @@ scikit-image
 opencv-python
 imutils
 scikit-learn
-scipy==1.1.0
+#scipy==1.1.0

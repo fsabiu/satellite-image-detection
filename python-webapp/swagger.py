@@ -59,20 +59,21 @@ class DetectHandler(tornado.web.RequestHandler):
         tags:
         - Satellite images
         summary: Detect object(s)
-        description: This can only be called after uploading one or more images (/images).
+        description: Image must be encoded in base64 format
         operationId: sat.api.detect
         produces:
         - application/json
         parameters:
         - in: body
           name: body
-          description: Detection of objects within the image with the specified id.
-          required: false
+          description: Detection of objects within the given image.
+          required: true
           schema:
             type: object
             properties:
               imageData:
                 type: string
+                required: true
               confidence:
                 type: number
                 format: float
@@ -114,18 +115,214 @@ class DetectHandler(tornado.web.RequestHandler):
                         
         """
 
-"""
-properties:
-    class: string
-    bounds: object
-    confidence: number
-"""
+class DetectDiffHandler(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Detect differences of objects between images
+        description: Images must be encoded in base64 format
+        operationId: sat.api.detectDiff
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          description: Detection of differences among objects within the given images.
+          required: true
+          schema:
+            type: object
+            properties:
+              image1:
+                type: string
+                required: true
+              image2:
+                type: string
+                required: true
+              confidence:
+                type: number
+                format: float
+              size:
+                type: number
+                format: int
+              format:
+                type: string
+        responses:
+            200:
+                description: Successful
+                schema:
+                  type: object
+                  properties:
+                    objects:
+                      type: array
+                      items:
+                        properties:
+                          class:
+                            type: string
+                          confidence:
+                            type: number
+                            format: float
+                          bounds:
+                            type: object
+                            properties:
+                              x1:
+                                type: number
+                                format: float
+                              y1:
+                                type: number
+                                format: float
+                              x2:
+                                type: number
+                                format: float
+                              y2:
+                                type: number
+                                format: float
+                        
+        """
 
+class DetectAllDiffHandler(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Detect general differences between images
+        description: Images must be encoded in base64 format
+        operationId: sat.api.detectAllDiff
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          description: Detection of differences within the given images.
+          required: true
+          schema:
+            type: object
+            properties:
+              image1:
+                type: string
+                required: true
+              image2:
+                type: string
+                required: true
+              minArea:
+                type: number
+                format: integer
+              
+        responses:
+            200:
+                description: Successful
+                schema:
+                  type: object
+                  properties:
+                    objects:
+                      type: array
+                      items:
+                        properties:
+                          bounds:
+                            type: object
+                            properties:
+                              x1:
+                                type: number
+                                format: float
+                              y1:
+                                type: number
+                                format: float
+                              x2:
+                                type: number
+                                format: float
+                              y2:
+                                type: number
+                                format: float
+                        
+        """
+
+class StitchHandler(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Stitch two images
+        description: Images must be encoded in base64 format
+        operationId: sat.api.stitch
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          description: Stitch of given images.
+          required: true
+          schema:
+            type: object
+            properties:
+              image1:
+                type: string
+                required: true
+              image2:
+                type: string
+                required: true
+              
+        responses:
+            200:
+                description: Successful
+                schema:
+                  type: object
+                  properties:
+                    result:
+                      type: string          
+        """
+
+class DetectSarDiffHandler(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Detect differences in SAR images
+        description: SAR images must be encoded in base64 format
+        operationId: sat.api.detectSAR
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          description: Detection of differences between the given SAR images.
+          required: true
+          schema:
+            type: object
+            properties:
+              image1:
+                type: string
+                required: true
+              image2:
+                type: string
+                required: true
+              
+        responses:
+            200:
+                description: Successful
+                schema:
+                  type: object
+                  properties:
+                    result:
+                      type: string          
+        """
 
 class Application(tornado.web.Application):
     _routes = [
         #tornado.web.url(r"/image", ImageHandler, name="Image"),
         tornado.web.url(r"/detect", DetectHandler, name="Detect"),
+        tornado.web.url(r"/detectDiff", DetectDiffHandler, name="Detect object differences"),
+        tornado.web.url(r"/detectAllDiff", DetectAllDiffHandler, name="Detect general differences"),
+        tornado.web.url(r"/stitch", StitchHandler, name="Stitch two images"),
+        tornado.web.url(r"/detectSarDiff", DetectSarDiffHandler, name="Detect SAR differences"),
+
     ]
     def __init__(self):
         settings = {"debug": True}
@@ -140,7 +337,7 @@ if __name__ == "__main__":
     tornado.options.parse_command_line()
     
     app = Application()
-    app.listen(port=9001)
+    app.listen(port=3001)
     tornado.ioloop.IOLoop.current().start()
     
     
