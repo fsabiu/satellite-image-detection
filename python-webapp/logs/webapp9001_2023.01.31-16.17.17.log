@@ -23,3 +23,201 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 2023-01-31 16:17:22.116926: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 328-188-588
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/test.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-01-31 16:24:45.025402: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-31 16:24:45.102622: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-01-31 16:24:45.102648: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-01-31 16:24:45.699152: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-01-31 16:24:45.699219: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-01-31 16:24:45.699245: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 665-962-840
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:53] "POST /addToTrainingSet HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:53] "GET /createModel HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:53] "DELETE /deleteModel HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:53] "[35m[1mDELETE /deleteModel HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 303, in delTrainingModels
+    if 'modelId' not in body:
+TypeError: argument of type 'NoneType' is not iterable
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:53] "DELETE /deleteModel HTTP/1.1" 200 -
+Using cache found in /home/oracle/.cache/torch/hub/ultralytics_yolov5_master
+INFO:yolov5:YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CPU
+
+YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CPU
+
+INFO:yolov5:Fusing layers... 
+Fusing layers... 
+INFO:yolov5:Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+INFO:yolov5:Adding AutoShape... 
+Adding AutoShape... 
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:55] "POST /detect HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:24:55] "POST /detect HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:55] "[31m[1mPOST /detect HTTP/1.1[0m" 400 -
+10.172.28.24 - - [31/Jan/2023 16:24:55] "[31m[1mPOST /detect HTTP/1.1[0m" 400 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:56] "POST /detectAllDiff HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:24:56] "POST /detectAllDiff HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:56] "[31m[1mPOST /detectAllDiff HTTP/1.1[0m" 400 -
+10.172.28.24 - - [31/Jan/2023 16:24:56] "[31m[1mPOST /detectAllDiff HTTP/1.1[0m" 400 -
+Using cache found in /home/oracle/.cache/torch/hub/ultralytics_yolov5_master
+INFO:yolov5:YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CPU
+
+YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CPU
+
+INFO:yolov5:Fusing layers... 
+Fusing layers... 
+INFO:yolov5:Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+INFO:yolov5:Adding AutoShape... 
+Adding AutoShape... 
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:58] "POST /detectDiff HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:24:58] "POST /detectDiff HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:24:58] "[31m[1mPOST /detectDiff HTTP/1.1[0m" 400 -
+10.172.28.24 - - [31/Jan/2023 16:24:58] "[31m[1mPOST /detectDiff HTTP/1.1[0m" 400 -
+/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/sklearn/cluster/_kmeans.py:870: FutureWarning: The default value of `n_init` will change from 10 to 'auto' in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  warnings.warn(
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /detectSarDiff HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /detectSarDiff HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getClasses HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getClasses HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "[35m[1mPOST /getClasses HTTP/1.1[0m" 500 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "[35m[1mPOST /getClasses HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 282, in getClasses
+    result['response'] = 'modelId missing'
+UnboundLocalError: local variable 'result' referenced before assignment
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getClasses HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getClasses HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "GET /getModels HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "GET /getModels HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getStatus HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getStatus HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getStatus HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /getStatus HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "[35m[1mPOST /removeFromTrainingSet HTTP/1.1[0m" 500 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "[35m[1mPOST /removeFromTrainingSet HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 259, in removeFromTraining
+    result = ml_utils.removeFromTraining(modelId, imageName)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/ml_utils.py", line 124, in removeFromTraining
+    os.remove(folder + "/images/" + imageName)
+IsADirectoryError: [Errno 21] Is a directory: 'train/training_1/images/'
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /removeFromTrainingSet HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /removeFromTrainingSet HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /stitch HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /stitch HTTP/1.1" 200 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "[31m[1mPOST /stitch HTTP/1.1[0m" 400 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "[31m[1mPOST /stitch HTTP/1.1[0m" 400 -
+INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /trainModel HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /trainModel HTTP/1.1" 200 -
+2
+[tensor([[7.85011e+02, 2.80521e+02, 8.97122e+02, 4.10394e+02, 8.94827e-01, 0.00000e+00],
+        [1.29801e+03, 3.61200e+02, 1.43268e+03, 5.05030e+02, 8.86189e-01, 0.00000e+00],
+        [1.16018e+03, 2.74326e+02, 1.29654e+03, 4.18598e+02, 8.84514e-01, 0.00000e+00],
+        [1.63491e+03, 6.86317e+02, 1.74885e+03, 8.18566e+02, 8.82362e-01, 0.00000e+00],
+        [1.86256e+03, 1.70710e+03, 1.97745e+03, 1.84190e+03, 8.76453e-01, 0.00000e+00],
+        [2.17651e+03, 2.36713e+03, 2.28486e+03, 2.47275e+03, 8.72318e-01, 0.00000e+00],
+        [7.57142e+02, 6.90161e+02, 8.22292e+02, 7.69500e+02, 8.72155e-01, 0.00000e+00],
+        [1.99610e+03, 1.80847e+03, 2.06079e+03, 1.89148e+03, 8.68105e-01, 0.00000e+00],
+        [1.39356e+03, 2.41019e+01, 1.45628e+03, 1.02542e+02, 8.67351e-01, 0.00000e+00],
+        [1.41361e+03, 1.24438e+03, 1.48124e+03, 1.31087e+03, 8.67228e-01, 0.00000e+00],
+        [2.09366e+03, 1.85536e+03, 2.19862e+03, 1.97736e+03, 8.61406e-01, 0.00000e+00],
+        [1.02320e+03, 1.90216e+02, 1.15716e+03, 3.32015e+02, 8.56944e-01, 0.00000e+00],
+        [1.46445e+03, 6.77730e+01, 1.52526e+03, 1.41425e+02, 8.56653e-01, 0.00000e+00],
+        [1.43770e+03, 4.46404e+02, 1.57232e+03, 5.88214e+02, 8.49691e-01, 0.00000e+00],
+        [1.53217e+03, 1.14913e+02, 1.59161e+03, 1.89738e+02, 8.48908e-01, 0.00000e+00],
+        [2.32666e+03, 2.14716e+03, 2.39608e+03, 2.21202e+03, 8.48460e-01, 0.00000e+00],
+        [1.47733e+03, 8.26210e+02, 1.58691e+03, 9.55086e+02, 8.48330e-01, 0.00000e+00],
+        [2.33016e+03, 2.01901e+03, 2.40226e+03, 2.08693e+03, 8.47079e-01, 0.00000e+00],
+        [2.25725e+03, 2.26186e+03, 2.32662e+03, 2.32870e+03, 8.39651e-01, 0.00000e+00],
+        [1.76374e+03, 1.68157e+03, 1.82371e+03, 1.75507e+03, 8.37579e-01, 0.00000e+00],
+        [2.22338e+03, 1.96776e+03, 2.28001e+03, 2.03315e+03, 8.30277e-01, 0.00000e+00],
+        [1.57062e+03, 1.60045e+03, 1.63031e+03, 1.68076e+03, 8.20592e-01, 0.00000e+00],
+        [1.59969e+03, 1.48328e+02, 1.63316e+03, 1.87706e+02, 8.17820e-01, 0.00000e+00],
+        [1.19212e+03, 1.33789e+03, 1.24600e+03, 1.40935e+03, 8.17079e-01, 0.00000e+00],
+        [1.66531e+03, 1.58804e+03, 1.72390e+03, 1.66807e+03, 7.94205e-01, 0.00000e+00],
+        [9.21115e+02, 7.65328e+02, 9.96277e+02, 8.30304e+02, 7.82450e-01, 0.00000e+00]])]
+Operating
+(1600, 1600) (1600, 1600)
+[1600 1600]
+
+Both images resized to  [1600 1600]
+
+vector_set shape (102400, 25)
+
+feature vector space size (2547216, 25)
+
+computing k means
+1600 1600
+Status: 1
+[INFO] image stitching failed (1)
+  0%|          | 0/33 [00:00<?, ?it/s]INFO:werkzeug:10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /trainModel HTTP/1.1" 200 -
+10.172.28.24 - - [31/Jan/2023 16:25:10] "POST /trainModel HTTP/1.1" 200 -
+Exception in thread Thread-29:
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/ml_utils.py", line 409, in run
+    pick_first = imgList[0] # Picking first image
+IndexError: list index out of range
+  3%|▎         | 1/33 [00:01<01:02,  1.97s/it]  6%|▌         | 2/33 [00:03<01:00,  1.96s/it]  6%|▌         | 2/33 [00:04<01:04,  2.09s/it]
+Exception in thread Thread-26:
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/ml_utils.py", line 424, in run
+    self.createTiles(
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/ml_utils.py", line 320, in createTiles
+    cut_tile[0:tiles_height, 0:tiles_width, :] = np_img[y_start:y_end, x_start:x_end, :]
+ValueError: could not broadcast input array from shape (63,512,3) into shape (512,512,3)

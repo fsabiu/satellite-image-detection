@@ -88,3 +88,12 @@ Name: class, dtype: int64
 oil-storage-tank    31
 oil-tank             5
 Name: class, dtype: int64
+2023/01/31 16:25:10:/home/oracle/satellite-imgs/sat-image-detection/python-webapp
+2023/01/31 16:25:10:Fetching new images
+2023/01/31 16:25:10:Annotating and tiling the following images: 
+2023/01/31 16:25:10:['train/training_1/images/img_20230127111633248248_1.png', 'train/training_1/images/img_20230131102615043664_1.png', 'train/training_1/images/img_20221221131814907040_1.png', 'train/training_1/images/img_20230127112549954434_1.png', 'train/training_1/images/img_20230131101759779408_1.png', 'train/training_1/images/img_20221228121559208739_1.png', 'train/training_1/images/img_20230131104553388099_1.png', 'train/training_1/images/img_20230126161544424307_1.png', 'train/training_1/images/img_20230127113357944204_1.png', 'train/training_1/images/img_20230131104714645512_1.png', 'train/training_1/images/img_20230127110848869691_1.png', 'train/training_1/images/img_20230131103012796859_1.png', 'train/training_1/images/img_20230131105250486601_1.png', 'train/training_1/images/img_20230131105355856922_1.png', 'train/training_1/images/img_20230127112309091747_1.png', 'train/training_1/images/img_20230127111619317783_1.png', 'train/training_1/images/img_20230131103750719579_1.png', 'train/training_1/images/img_20221228121648840433_1.png', 'train/training_1/images/img_20230126161614985539_1.png', 'train/training_1/images/img_20230131104444789251_1.png', 'train/training_1/images/img_20230131102733657479_1.png', 'train/training_1/images/img_20230131162453222391_1.png', 'train/training_1/images/img_20230131104346766517_1.png', 'train/training_1/images/img_20221228121615065068_1.png', 'train/training_1/images/img_20221228123001053868_1.png', 'train/training_1/images/img_20230127111842811634_1.png', 'train/training_1/images/img_20230131104754362841_1.png', 'train/training_1/images/img_20230127111003172633_1.png', 'train/training_1/images/img_20230131101132449978_1.png', 'train/training_1/images/img_20221221131817153411_1.png', 'train/training_1/images/img_20230131105115696180_1.png', 'train/training_1/images/img_20230131102439440031_1.png', 'train/training_1/images/img_20230127111723553944_1.png']
+2023/01/31 16:25:10:Starting tiles creation...
+2023/01/31 16:25:10:Airplane            37
+oil-storage-tank    32
+oil-tank             5
+Name: class, dtype: int64

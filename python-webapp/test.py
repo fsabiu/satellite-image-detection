@@ -17,7 +17,7 @@ Method	                Equivalent to
 """
 
 class TestWebapp(unittest.TestCase):
-    port = 8888
+    port = 9001
     conn = http.client.HTTPSConnection("iccc-s019.pl.oracle.com", port)
     img_id_test = ""
     model_created = None 
