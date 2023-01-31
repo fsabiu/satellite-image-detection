@@ -42,7 +42,7 @@ tail -f webapp9001_2022.12.28-20.04.49.log
 Tests have been deployed in a table driven way.
 
 e.g.
-```
+```rb
 def test_getClasses(self): # Post
         """
         Test /getClasses function
