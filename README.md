@@ -11,7 +11,7 @@ pip (python package manager)
 ### Requirements installation
 ```bash
 cd python-webapp
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ### Start
