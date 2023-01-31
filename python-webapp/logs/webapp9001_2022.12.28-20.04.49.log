@@ -1,0 +1,160 @@
+nohup: ignoring input
+ * Serving Flask app 'webapp-flask_multithread_9001'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:9001
+ * Running on https://10.172.28.24:9001
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 475-344-547
+INFO:werkzeug:10.175.164.44 - - [28/Dec/2022 20:05:05] "[31m[1mPOST /detect HTTP/1.1[0m" 400 -
+INFO:werkzeug:10.175.164.44 - - [28/Dec/2022 20:05:18] "[35m[1mPOST /detect HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 43, in detect
+    if not ml_utils.existsModel():
+TypeError: existsModel() missing 1 required positional argument: 'i'
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 403-442-146
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 141-992-570
+Using cache found in /home/oracle/.cache/torch/hub/ultralytics_yolov5_master
+INFO:yolov5:YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CUDA:0 (NVIDIA GeForce GTX 1070, 8118MiB)
+
+YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CUDA:0 (NVIDIA GeForce GTX 1070, 8118MiB)
+
+INFO:werkzeug:10.175.164.44 - - [28/Dec/2022 20:06:42] "[35m[1mPOST /detect HTTP/1.1[0m" 500 -
+10.175.164.44 - - [28/Dec/2022 20:06:42] "[35m[1mPOST /detect HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/.cache/torch/hub/ultralytics_yolov5_master/hubconf.py", line 49, in _create
+    model = DetectMultiBackend(path, device=device, fuse=autoshape)  # detection model
+  File "/home/oracle/.cache/torch/hub/ultralytics_yolov5_master/models/common.py", line 345, in __init__
+    model = attempt_load(weights if isinstance(weights, list) else w, device=device, inplace=True, fuse=fuse)
+  File "/home/oracle/.cache/torch/hub/ultralytics_yolov5_master/models/experimental.py", line 79, in attempt_load
+    ckpt = torch.load(attempt_download(w), map_location='cpu')  # load
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/serialization.py", line 771, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/serialization.py", line 270, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/serialization.py", line 251, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'models/model_0/best.pt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/oracle/.cache/torch/hub/ultralytics_yolov5_master/hubconf.py", line 60, in _create
+    model = attempt_load(path, device=device, fuse=False)  # arbitrary model
+  File "/home/oracle/.cache/torch/hub/ultralytics_yolov5_master/models/experimental.py", line 79, in attempt_load
+    ckpt = torch.load(attempt_download(w), map_location='cpu')  # load
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/serialization.py", line 771, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/serialization.py", line 270, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/serialization.py", line 251, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'models/model_0/best.pt'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 61, in detect
+    result = sat_utils.detect(path, modelId, conf,size)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/sat_utils.py", line 26, in detect
+    model = torch.hub.load('ultralytics/yolov5', 'custom', f"models/model_{modelId}/best.pt")
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/hub.py", line 542, in load
+    model = _load_local(repo_or_dir, model, *args, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/torch/hub.py", line 572, in _load_local
+    model = entry(*args, **kwargs)
+  File "/home/oracle/.cache/torch/hub/ultralytics_yolov5_master/hubconf.py", line 83, in custom
+    return _create(path, autoshape=autoshape, verbose=_verbose, device=device)
+  File "/home/oracle/.cache/torch/hub/ultralytics_yolov5_master/hubconf.py", line 78, in _create
+    raise Exception(s) from e
+Exception: [Errno 2] No such file or directory: 'models/model_0/best.pt'. Cache may be out of date, try `force_reload=True` or see https://github.com/ultralytics/yolov5/issues/36 for help.
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/sat_utils.py', reloading
+ * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/sat_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 325-275-680
+Using cache found in /home/oracle/.cache/torch/hub/ultralytics_yolov5_master
+INFO:yolov5:YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CUDA:0 (NVIDIA GeForce GTX 1070, 8118MiB)
+
+YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CUDA:0 (NVIDIA GeForce GTX 1070, 8118MiB)
+
+INFO:yolov5:Fusing layers... 
+Fusing layers... 
+INFO:yolov5:Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+INFO:yolov5:Adding AutoShape... 
+Adding AutoShape... 
+INFO:werkzeug:10.175.164.44 - - [28/Dec/2022 20:07:06] "POST /detect HTTP/1.1" 200 -
+10.175.164.44 - - [28/Dec/2022 20:07:06] "POST /detect HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_8888.py', reloading
+ * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_8888.py', reloading
+[tensor([[7.85011e+02, 2.80521e+02, 8.97122e+02, 4.10394e+02, 8.94826e-01, 0.00000e+00],
+        [1.29801e+03, 3.61200e+02, 1.43268e+03, 5.05030e+02, 8.86189e-01, 0.00000e+00],
+        [1.16018e+03, 2.74326e+02, 1.29654e+03, 4.18598e+02, 8.84514e-01, 0.00000e+00],
+        [1.63491e+03, 6.86317e+02, 1.74885e+03, 8.18566e+02, 8.82362e-01, 0.00000e+00],
+        [1.86256e+03, 1.70710e+03, 1.97745e+03, 1.84190e+03, 8.76453e-01, 0.00000e+00],
+        [2.17651e+03, 2.36713e+03, 2.28486e+03, 2.47275e+03, 8.72318e-01, 0.00000e+00],
+        [7.57142e+02, 6.90161e+02, 8.22292e+02, 7.69500e+02, 8.72156e-01, 0.00000e+00],
+        [1.99610e+03, 1.80847e+03, 2.06079e+03, 1.89148e+03, 8.68105e-01, 0.00000e+00],
+        [1.39356e+03, 2.41019e+01, 1.45628e+03, 1.02542e+02, 8.67351e-01, 0.00000e+00],
+        [1.41361e+03, 1.24438e+03, 1.48124e+03, 1.31087e+03, 8.67228e-01, 0.00000e+00],
+        [2.09366e+03, 1.85536e+03, 2.19862e+03, 1.97736e+03, 8.61405e-01, 0.00000e+00],
+        [1.02320e+03, 1.90216e+02, 1.15716e+03, 3.32015e+02, 8.56944e-01, 0.00000e+00],
+        [1.46445e+03, 6.77730e+01, 1.52526e+03, 1.41425e+02, 8.56653e-01, 0.00000e+00],
+        [1.43770e+03, 4.46404e+02, 1.57232e+03, 5.88214e+02, 8.49691e-01, 0.00000e+00],
+        [1.53217e+03, 1.14913e+02, 1.59161e+03, 1.89738e+02, 8.48907e-01, 0.00000e+00],
+        [2.32666e+03, 2.14716e+03, 2.39608e+03, 2.21202e+03, 8.48460e-01, 0.00000e+00],
+        [1.47733e+03, 8.26210e+02, 1.58691e+03, 9.55086e+02, 8.48330e-01, 0.00000e+00],
+        [2.33016e+03, 2.01901e+03, 2.40226e+03, 2.08693e+03, 8.47079e-01, 0.00000e+00],
+        [2.25725e+03, 2.26186e+03, 2.32662e+03, 2.32870e+03, 8.39651e-01, 0.00000e+00],
+        [1.76374e+03, 1.68157e+03, 1.82371e+03, 1.75507e+03, 8.37579e-01, 0.00000e+00],
+        [2.22338e+03, 1.96776e+03, 2.28001e+03, 2.03315e+03, 8.30277e-01, 0.00000e+00],
+        [1.57062e+03, 1.60045e+03, 1.63031e+03, 1.68076e+03, 8.20592e-01, 0.00000e+00],
+        [1.59969e+03, 1.48328e+02, 1.63316e+03, 1.87706e+02, 8.17821e-01, 0.00000e+00],
+        [1.19212e+03, 1.33789e+03, 1.24600e+03, 1.40935e+03, 8.17079e-01, 0.00000e+00],
+        [1.66531e+03, 1.58804e+03, 1.72390e+03, 1.66807e+03, 7.94205e-01, 0.00000e+00],
+        [9.21115e+02, 7.65328e+02, 9.96277e+02, 8.30304e+02, 7.82450e-01, 0.00000e+00]], device='cuda:0')]
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 345-232-821
+INFO:werkzeug:10.175.164.44 - - [28/Dec/2022 20:13:50] "GET /getModels HTTP/1.1" 200 -

@@ -1,0 +1,18 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore all photos
+*.jpg
+*.png
+
+python-webapp/train/*
+python-webapp/images/*
+python-webapp/models/*
+python-webapp/wandb/*
+
+
+# Ignore files related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache

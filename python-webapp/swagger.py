@@ -66,11 +66,14 @@ class DetectHandler(tornado.web.RequestHandler):
         parameters:
         - in: body
           name: body
-          description: Detection of objects within the given image.
+          description: Detection of objects within the given image using the given model.
           required: true
           schema:
             type: object
             properties:
+              modelId:
+                type: number
+                format: int
               imageData:
                 type: string
                 required: true
@@ -314,6 +317,280 @@ class DetectSarDiffHandler(tornado.web.RequestHandler):
                       type: string          
         """
 
+class addToTrainingSet(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Detect object(s)
+        description: Add image to the training set of the given model
+        operationId: sat.api.addToTrain
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          description: Detection of objects within the given image using the given model.
+          required: true
+          schema:
+            type: object
+            properties:
+              modelId:
+                type: number
+                format: int
+              imageData:
+                type: string
+                required: true
+              bounds:
+                type: object
+                properties:
+                  x1:
+                    type: number
+                    format: float
+                  y1:
+                    type: number
+                    format: float
+                  x2:
+                    type: number
+                    format: float
+                  y2:
+                    type: number
+                    format: float
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+        """
+
+class removeFromTrainingSet(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Detect object(s)
+        description: Remove image from the training set of the given model
+        operationId: sat.api.remFromTrain
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              modelId:
+                type: number
+                format: int
+              imageId:
+                type: string
+                required: true
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+        """
+
+class createModel(tornado.web.RequestHandler):
+    def get(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Detect object(s)
+        description: Create a new prediction model identified by the returned id
+        operationId: sat.api.createModel
+        produces:
+        - application/json
+        parameters:
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  modelId:
+                    type: string
+        """
+
+class deleteModel(tornado.web.RequestHandler):
+    def delete(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Detect object(s)
+        description: Delete a prediction model identified by the given id (except for model 0, that is the base model)
+        operationId: sat.api.deleteModel
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              modelId:
+                type: number
+                format: int
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  modelId:
+                    type: string
+        """
+
+class getStatus(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Get jobId status
+        description: Get the log file of the job with the specified jobId
+        operationId: sat.api.getStatus
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              jobId:
+                type: number
+                format: int
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+        """
+
+class getModels(tornado.web.RequestHandler):
+    def get(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Get prediction models
+        description: Get a list of the model names and ids.
+        operationId: sat.api.getModels
+        produces:
+        - application/json
+        parameters:
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  models:
+                    type: array
+                    items:
+                      properties:
+                        id:
+                          type: number
+                          format: int
+                        name:
+                          type: string
+        """
+
+class getClasses(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Get classes of a specified model
+        description: Get the class list of the model with the given modelId
+        operationId: sat.api.getClasses
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              modelId:
+                type: number
+                format: int
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  classes:
+                    type: array
+                    items:
+                      type: string
+        """
+
+class trainModel(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Satellite images
+        summary: Train the specified model
+        description: Train the model having the specified modelId including labelled data from other models
+        operationId: sat.api.trainModel
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              modelId:
+                type: number
+                format: int
+              trainingData:
+                type: array
+                items:
+                  type: number
+                  format: int
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  jobId:
+                    type: string
+        """
+
 class Application(tornado.web.Application):
     _routes = [
         #tornado.web.url(r"/image", ImageHandler, name="Image"),
@@ -322,6 +599,14 @@ class Application(tornado.web.Application):
         tornado.web.url(r"/detectAllDiff", DetectAllDiffHandler, name="Detect general differences"),
         tornado.web.url(r"/stitch", StitchHandler, name="Stitch two images"),
         tornado.web.url(r"/detectSarDiff", DetectSarDiffHandler, name="Detect SAR differences"),
+        tornado.web.url(r"/addToTrainingSet", addToTrainingSet, name="Add image to training set"),
+        tornado.web.url(r"/removeFromTrainingSet", removeFromTrainingSet, name="Remove image from training set"),
+        tornado.web.url(r"/createModel", createModel, name="Create a new prediction model"),
+        tornado.web.url(r"/deleteModel", deleteModel, name="Delete a prediction model with its training and validation sets"),
+        tornado.web.url(r"/getStatus", getStatus, name="Get the status of the job with the specified jobId"),
+        tornado.web.url(r"/getModels", getModels, name="Get the list of trained prediction models"),
+        tornado.web.url(r"/getClasses", getClasses, name="Get the list of the classes of the specified model"),
+        tornado.web.url(r"/trainModel", trainModel, name="Train a model and get the id of the job"),
 
     ]
     def __init__(self):
@@ -337,7 +622,7 @@ if __name__ == "__main__":
     tornado.options.parse_command_line()
     
     app = Application()
-    app.listen(port=3001)
+    app.listen(port=9001)
     tornado.ioloop.IOLoop.current().start()
     
     

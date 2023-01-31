@@ -1,0 +1,9 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "webapp-flask_multithread_8888.py", line 10, in <module>
+    import clu_util
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp_8888/clu_util.py", line 2, in <module>
+    from image_clustering.src.models.feature_extractor import run_inference_on_images_feature
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp_8888/image_clustering/src/models/feature_extractor.py", line 7, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'

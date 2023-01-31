@@ -1,0 +1,18 @@
+nohup: ignoring input
+2023-01-10 15:49:17.022946: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-01-10 15:49:17.100113: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/cuda-10.1/lib64
+2023-01-10 15:49:17.100140: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-01-10 15:49:17.533966: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/cuda-10.1/lib64
+2023-01-10 15:49:17.534030: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: :/usr/local/cuda-10.1/lib64
+2023-01-10 15:49:17.534038: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+Traceback (most recent call last):
+  File "webapp-flask_multithread_8888.py", line 350, in <module>
+    def getStatus():
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/scaffold.py", line 449, in decorator
+    self.add_url_rule(rule, endpoint, f, **options)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/scaffold.py", line 50, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1358, in add_url_rule
+    raise AssertionError(
+AssertionError: View function mapping is overwriting an existing endpoint function: getStatus

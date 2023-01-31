@@ -22,8 +22,8 @@ import base64
 
 
 # Main
-def detect(img, conf, size) :
-    model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
+def detect(img, modelId, conf, size) :
+    model = torch.hub.load('ultralytics/yolov5', 'custom', f"models/model_{modelId}/weights/best.pt")
     model.conf = float(conf)
 
     results = model(img, size=int(size))
@@ -39,41 +39,6 @@ def detect(img, conf, size) :
     resDicts["objects"] = resultList
     
     return resDicts
-
-""" def detect(imgs, conf, size) :
-    model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
-    model.conf = float(conf)
-
-    results = model(imgs, size=int(size))
- 
-    resDicts = []
-    
-    for i in range(len(imgs)):
-        resultList = []
-
-        for pred in results.pred[i]:
-            resultList.append({"class" : results.names[int(pred[5])] , 'bounds': {"x1" : pred[0].tolist(),"y1" : pred[1].tolist(),"x2" : pred[2].tolist(),"y2" : pred[3].tolist()}, 'confidence': float(pred[4])}) 
-        resDicts.append({imgs[i] : {"objects" : resultList}})
-    
-    return resDicts """
-
-""" def detect(imgs, conf, size) :
-    model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
-    model.conf = float(conf)
-
-    results = model(imgs, size=int(size))
- 
-    resDicts = []
-
-    for i in range(len(imgs)):
-        resDicts.append({})
-        for key, value in results.names.items():
-            resDicts[i][value] = []
-
-        for pred in results.pred[i]:
-            resDicts[i][results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
-
-    return resDicts """
 
 
 def Appears(x, y, offset):
@@ -118,34 +83,6 @@ def detectDiff (im1,im2,conf,size) :
     resDict["objects"] = resultList
     return resDict
 
-""" def detectDiff (im1,im2,conf,size) :
-
-    model = torch.hub.load('ultralytics/yolov5', 'custom', 'exp2/weights/best.pt')
-    model.conf = float(conf)
-
-    results = model([im1, im2], size=int(size))
-
-    # New objects
-    new = [results.pred[1][i] for i, x in enumerate(results.pred[1][:, 0:4]) if not Appears(x, results.pred[0][:, 0:4], 20)]
-
-    # Old objects
-    old = [results.pred[0][i] for i, x in enumerate(results.pred[0][:, 0:4]) if not Appears(x, results.pred[1][:, 0:4], 20)]
-
-    resDict = {}
-    for key, value in results.names.items():
-        resDict[value] = []
-    annotations = []
-    if(len(new)>0):
-        annotations = annotations + new
-    if(len(old)>0):
-        annotations = annotations + old
-        
-    if(len(annotations)>0):
-        changes = torch.stack(annotations)
-        for pred in changes:
-            resDict[results.names[int(pred[5])]].append({'coords': pred[0:4].tolist(), 'confidence': float(pred[4])})
-    
-    return resDict """
 
 def detectAllDiff (img1,img2, minArea) :
 
@@ -189,7 +126,11 @@ def stitch (img1,img2) :
 
     # evaluate status and display image if successfully stitched
     if status == 0: # status is 0 for successful operation
-        cv2.imwrite("./stitched/output.jpg", stitched) # write to output file
+        # Creating folder if does not exist
+        if not os.path.exists("stitched"):
+            os.makedirs("stitched")
+
+        cv2.imwrite("stitched/output.jpg", stitched) # write to output file
         #cv2.imshow("Stitched", stitched) # display stitched image
         cv2.waitKey(0)
 
@@ -214,6 +155,3 @@ def detectSAR (img1,img2):
         encoded_image = base64.b64encode(f.read()).decode('utf-8')
 
     return {"result": encoded_image}
-    
-    
- 
