@@ -8,10 +8,10 @@ Python >= 3.7.x
 pip (python package manager)
 
 
-### Installation & start
+### Requirements installation
 ```bash
 cd python-webapp
-pip install -r requirements #or upgrade
+pip install -r requirements
 ```
 
 ### Start
