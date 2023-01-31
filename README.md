@@ -12,11 +12,14 @@ pip (python package manager)
 ```bash
 cd python-webapp
 pip install -r requirements #or upgrade
-
-nohup python webapp-flask_multithread_9001.py > logs/webapp9001_$(date "+%Y.%m.%d-%H.%M.%S").log 2>&1 &
-
 ```
 
+### Start
+
+To execute the webserver in background and redirect the logs into the logs directory execute the following command:
+```bash
+nohup python webapp-flask_multithread_9001.py > logs/webapp9001_$(date "+%Y.%m.%d-%H.%M.%S").log 2>&1 &
+```
 Note: default port is 9001
 
 
