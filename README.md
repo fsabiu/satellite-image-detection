@@ -25,8 +25,8 @@ Note: default port is 9001
 
 ### Usage
 Some calls examples:
-* localhost:9001/detect - detect objects in an image.
-* localhost:9001/createModel - create new detection model based in YOLOv5.
+* https://localhost:9001/detect - detect objects in an image.
+* https://localhost:9001/createModel - create new detection model based in YOLOv5.
 
 Info about all the Web-app endpoints:
 
