@@ -4,7 +4,7 @@ Repo to detect objects in satellite images - Back End
 
 ### Requirements
 
-Python >= 3.7.X     
+Python >= 3.7.x     
 pip (python package manager)
 
 
@@ -17,7 +17,7 @@ nohup python webapp-flask_multithread_9001.py > logs/webapp9001_$(date "+%Y.%m.%
 
 ```
 
-_Note: default port is 9001
+Note: default port is 9001
 
 
 ### Usage
@@ -36,4 +36,3 @@ Please refer to [this swagger](http://130.61.157.94:9001/api/doc#/)
 cd python-webapp/logs
 tail -f webapp9001_2022.12.28-20.04.49.log
 ```
-
