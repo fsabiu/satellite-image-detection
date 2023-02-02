@@ -11,7 +11,7 @@ pip (python package manager)
 ### Requirements installation
 ```bash
 cd python-webapp
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 ### Start
@@ -25,8 +25,8 @@ Note: default port is 9001
 
 ### Usage
 Some calls examples:
-* https://localhost:9001/detect - detect objects in an image.
-* https://localhost:9001/createModel - create new detection model based in YOLOv5.
+* [https://localhost:9001/detect](http://130.61.157.94:9001/api/doc#/Satellite%20images/sat.api.detect) - detect objects in an image.
+* [https://localhost:9001/createModel](http://130.61.157.94:9001/api/doc#/Satellite%20images/sat.api.createModel)- create new detection model based in YOLOv5.
 
 Info about all the Web-app endpoints:
 
