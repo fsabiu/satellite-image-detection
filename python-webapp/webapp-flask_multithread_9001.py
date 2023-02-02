@@ -378,11 +378,27 @@ def getReports():
     body = request.get_json(force=True)
 
     for field in body:
-        if field not in report_utils.report_fields.values():
+        if field not in list(report_utils.report_fields.values()) + ['x', 'y']:
             result['response'] = "Field " + field + " missing"
             r_status = status.HTTP_400_BAD_REQUEST
     else:
         result = report_utils.query(body)
+        r_status = status.HTTP_200_OK
+
+    return jsonify({"reports": result}), r_status
+
+@app.route('/reports/searchAny', methods=['POST'])
+def searchInReports():
+    result = {}
+    r_status = None
+
+    body = request.get_json(force=True)
+
+    if "query" not in body:
+        result['response'] = "query parameter missing"
+        r_status = status.HTTP_400_BAD_REQUEST
+    else:
+        result = report_utils.searchInReports(body)
         r_status = status.HTTP_200_OK
 
     return jsonify({"reports": result}), r_status
@@ -393,8 +409,8 @@ def getTags():
 
     filter = ''
     body = request.get_json(force=True)
-    if 'search' in body:
-        filter = body['search']
+    if 'query' in body:
+        filter = body['query']
     
     result = report_utils.getTags(filter)
     return jsonify({"tags": result}), r_status

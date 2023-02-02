@@ -591,9 +591,201 @@ class trainModel(tornado.web.RequestHandler):
                     type: string
         """
 
+class getTags(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Reports
+        summary: Get or search the tags of the reports
+        description: Get or search the available tags 
+        operationId: sat.api.getReportTags
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              query:
+                type: string
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  tags:
+                    type: array
+                    items:
+                      type: string
+        """
+
+
+class reportsQuery(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Reports
+        summary: Search reports by fields values
+        description: Search reports by fields values. If no fields are sent, it returns all the reports.
+        operationId: sat.api.reportsQuery
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              authorFirstName:
+                type: string
+              authorLastName:
+                type: string
+              title:
+                type: string
+              description:
+                type: string
+              reportId:
+                type: string
+              creationDate:
+                type: string
+              lastUpdateDate:
+                type: string
+              linkedMetadata:
+                type: boolean
+              x:
+                type: number
+                format: float
+              y:
+                type: number
+                format: float
+              tags:
+                type: array
+                items:
+                  type: string
+              
+              
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  reports:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        authorFirstName:
+                          type: string
+                        authorLastName:
+                          type: string
+                        title:
+                          type: string
+                        description:
+                          type: string
+                        reportId:
+                          type: string
+                        creationDate:
+                          type: string
+                        lastUpdateDate:
+                          type: string
+                        linkedMetadata:
+                          type: boolean
+                        fromCoordx:
+                          type: number
+                          format: float
+                        fromCoordy:
+                          type: number
+                          format: float
+                        toCoordx:
+                          type: number
+                          format: float
+                        toCoordy:
+                          type: number
+                          format: float
+                        tags:
+                          type: array
+                          items:
+                            type: string
+        """
+
+
+class searchAny(tornado.web.RequestHandler):
+    def post(self):
+        """
+        Description end-point
+        ---
+        tags:
+        - Reports
+        summary: Flexible search in every text field of the reports
+        description: Find partial matches between the query and the textual fields of the reports
+        operationId: sat.api.searchAny
+        produces:
+        - application/json
+        parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              query:
+                type: string
+        responses:
+          200:
+              description: Successful
+              schema:
+                type: object
+                properties:
+                  reports:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        authorFirstName:
+                          type: string
+                        authorLastName:
+                          type: string
+                        title:
+                          type: string
+                        description:
+                          type: string
+                        reportId:
+                          type: string
+                        creationDate:
+                          type: string
+                        lastUpdateDate:
+                          type: string
+                        linkedMetadata:
+                          type: boolean
+                        fromCoordx:
+                          type: number
+                          format: float
+                        fromCoordy:
+                          type: number
+                          format: float
+                        toCoordx:
+                          type: number
+                          format: float
+                        toCoordy:
+                          type: number
+                          format: float
+                        tags:
+                          type: array
+                          items:
+                            type: string
+        """
+
 class Application(tornado.web.Application):
     _routes = [
-        #tornado.web.url(r"/image", ImageHandler, name="Image"),
         tornado.web.url(r"/detect", DetectHandler, name="Detect"),
         tornado.web.url(r"/detectDiff", DetectDiffHandler, name="Detect object differences"),
         tornado.web.url(r"/detectAllDiff", DetectAllDiffHandler, name="Detect general differences"),
@@ -607,7 +799,9 @@ class Application(tornado.web.Application):
         tornado.web.url(r"/getModels", getModels, name="Get the list of trained prediction models"),
         tornado.web.url(r"/getClasses", getClasses, name="Get the list of the classes of the specified model"),
         tornado.web.url(r"/trainModel", trainModel, name="Train a model and get the id of the job"),
-
+        tornado.web.url(r"/reports/tags", getTags, name="Get or search the tags of the reports"),
+        tornado.web.url(r"/reports/query", reportsQuery, name="Search reports by fields values"),
+        tornado.web.url(r"/reports/searchAny", searchAny, name="Search in any field of the reports")
     ]
     def __init__(self):
         settings = {"debug": True}
@@ -624,9 +818,4 @@ if __name__ == "__main__":
     app = Application()
     app.listen(port=9001)
     tornado.ioloop.IOLoop.current().start()
-    
-    
-
-  
-
     
