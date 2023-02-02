@@ -221,3 +221,695 @@ Traceback (most recent call last):
   File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/ml_utils.py", line 320, in createTiles
     cut_tile[0:tiles_height, 0:tiles_width, :] = np_img[y_start:y_end, x_start:x_end, :]
 ValueError: could not broadcast input array from shape (63,512,3) into shape (512,512,3)
+Using cache found in /home/oracle/.cache/torch/hub/ultralytics_yolov5_master
+INFO:yolov5:YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CPU
+
+YOLOv5 🚀 2022-11-17 Python-3.8.2 torch-1.13.0+cu117 CPU
+
+INFO:yolov5:Fusing layers... 
+Fusing layers... 
+INFO:yolov5:Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+Model summary: 157 layers, 7015519 parameters, 0 gradients, 15.8 GFLOPs
+INFO:yolov5:Adding AutoShape... 
+Adding AutoShape... 
+INFO:werkzeug:10.175.214.156 - - [01/Feb/2023 12:04:33] "POST /detect HTTP/1.1" 200 -
+10.175.214.156 - - [01/Feb/2023 12:04:33] "POST /detect HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+ * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+[tensor([[7.85011e+02, 2.80521e+02, 8.97122e+02, 4.10394e+02, 8.94827e-01, 0.00000e+00],
+        [1.29801e+03, 3.61200e+02, 1.43268e+03, 5.05030e+02, 8.86189e-01, 0.00000e+00],
+        [1.16018e+03, 2.74326e+02, 1.29654e+03, 4.18598e+02, 8.84514e-01, 0.00000e+00],
+        [1.63491e+03, 6.86317e+02, 1.74885e+03, 8.18566e+02, 8.82362e-01, 0.00000e+00],
+        [1.86256e+03, 1.70710e+03, 1.97745e+03, 1.84190e+03, 8.76453e-01, 0.00000e+00],
+        [2.17651e+03, 2.36713e+03, 2.28486e+03, 2.47275e+03, 8.72318e-01, 0.00000e+00],
+        [7.57142e+02, 6.90161e+02, 8.22292e+02, 7.69500e+02, 8.72155e-01, 0.00000e+00],
+        [1.99610e+03, 1.80847e+03, 2.06079e+03, 1.89148e+03, 8.68105e-01, 0.00000e+00],
+        [1.39356e+03, 2.41019e+01, 1.45628e+03, 1.02542e+02, 8.67351e-01, 0.00000e+00],
+        [1.41361e+03, 1.24438e+03, 1.48124e+03, 1.31087e+03, 8.67228e-01, 0.00000e+00],
+        [2.09366e+03, 1.85536e+03, 2.19862e+03, 1.97736e+03, 8.61406e-01, 0.00000e+00],
+        [1.02320e+03, 1.90216e+02, 1.15716e+03, 3.32015e+02, 8.56944e-01, 0.00000e+00],
+        [1.46445e+03, 6.77730e+01, 1.52526e+03, 1.41425e+02, 8.56653e-01, 0.00000e+00],
+        [1.43770e+03, 4.46404e+02, 1.57232e+03, 5.88214e+02, 8.49691e-01, 0.00000e+00],
+        [1.53217e+03, 1.14913e+02, 1.59161e+03, 1.89738e+02, 8.48908e-01, 0.00000e+00],
+        [2.32666e+03, 2.14716e+03, 2.39608e+03, 2.21202e+03, 8.48460e-01, 0.00000e+00],
+        [1.47733e+03, 8.26210e+02, 1.58691e+03, 9.55086e+02, 8.48330e-01, 0.00000e+00],
+        [2.33016e+03, 2.01901e+03, 2.40226e+03, 2.08693e+03, 8.47079e-01, 0.00000e+00],
+        [2.25725e+03, 2.26186e+03, 2.32662e+03, 2.32870e+03, 8.39651e-01, 0.00000e+00],
+        [1.76374e+03, 1.68157e+03, 1.82371e+03, 1.75507e+03, 8.37579e-01, 0.00000e+00],
+        [2.22338e+03, 1.96776e+03, 2.28001e+03, 2.03315e+03, 8.30277e-01, 0.00000e+00],
+        [1.57062e+03, 1.60045e+03, 1.63031e+03, 1.68076e+03, 8.20592e-01, 0.00000e+00],
+        [1.59969e+03, 1.48328e+02, 1.63316e+03, 1.87706e+02, 8.17820e-01, 0.00000e+00],
+        [1.19212e+03, 1.33789e+03, 1.24600e+03, 1.40935e+03, 8.17079e-01, 0.00000e+00],
+        [1.66531e+03, 1.58804e+03, 1.72390e+03, 1.66807e+03, 7.94205e-01, 0.00000e+00],
+        [9.21115e+02, 7.65328e+02, 9.96277e+02, 8.30304e+02, 7.82450e-01, 0.00000e+00]])]
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:06:44.464206: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:06:44.540599: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:06:44.540625: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:06:44.968013: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:06:44.968075: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:06:44.968106: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 139-678-059
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:08:51.215288: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:08:51.291608: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:08:51.291634: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:08:51.718404: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:08:51.718478: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:08:51.718513: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 425-658-056
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:22:18.599296: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:22:18.674754: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:22:18.674780: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:22:19.094681: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:22:19.094744: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:22:19.094776: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 272-825-466
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:26:54.478229: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:26:54.554387: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:26:54.554412: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:26:54.984376: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:26:54.984438: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:26:54.984447: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 615-617-704
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:27:45.537535: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:27:45.614038: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:27:45.614063: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:27:46.040815: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:27:46.040884: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:27:46.040892: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 428-102-178
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:28:25.577241: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:28:25.652500: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:28:25.652527: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:28:26.075254: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:28:26.075321: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:28:26.075332: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 369-547-957
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:28:40.988792: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:28:41.065563: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:28:41.065589: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:28:41.492579: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:28:41.492646: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:28:41.492654: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 220-211-214
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:32:06.886671: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:32:06.963409: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:32:06.963437: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:32:07.389868: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:32:07.389939: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:32:07.389966: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 404-216-409
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:34:24.662949: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:34:24.739979: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:34:24.740015: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:34:25.165092: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:34:25.165166: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:34:25.165195: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 104-526-076
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:34:53.334618: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:34:53.410554: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:34:53.410582: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:34:53.837968: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:34:53.838032: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:34:53.838040: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 764-871-206
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/sar_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:36:21.627339: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:36:21.703603: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:36:21.703635: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:36:22.133942: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:36:22.134004: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:36:22.134012: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 450-598-541
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:36:38.090181: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:36:38.166085: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:36:38.166112: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:36:38.593145: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:36:38.593207: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:36:38.593215: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 751-473-619
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/polish_names/polish_data.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:43:03.923311: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:43:03.999968: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:43:03.999991: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:43:04.428689: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:43:04.428750: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:43:04.428757: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 423-169-606
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/polish_names/generator.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:44:14.165999: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:44:14.241607: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:44:14.241632: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:44:14.666329: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:44:14.666389: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:44:14.666397: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 113-618-415
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/polish_names/generator.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:44:29.601189: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:44:29.677429: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:44:29.677456: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:44:30.103083: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:44:30.103153: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:44:30.103164: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 142-477-268
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/polish_names/generator.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:45:59.981106: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:46:00.057766: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:00.057793: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:46:00.491679: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:00.491742: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:00.491750: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 994-080-296
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/polish_names/generator.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:46:04.303940: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:46:04.380413: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:04.380440: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:46:04.810382: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:04.810442: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:04.810450: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-530-651
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/polish_names/generator.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:46:35.988260: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:46:36.064401: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:36.064428: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:46:36.491538: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:36.491602: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:46:36.491611: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 730-610-463
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/polish_names/generator.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 14:49:01.994528: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 14:49:02.071861: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:49:02.071888: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 14:49:02.501223: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:49:02.501282: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 14:49:02.501291: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 239-656-023
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 15:16:44.977579: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 15:16:45.053592: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:16:45.053619: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 15:16:45.482348: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:16:45.482417: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:16:45.482433: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 647-583-400
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 15:39:20.187347: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 15:39:20.263602: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:39:20.263630: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 15:39:20.686594: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:39:20.686657: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:39:20.686665: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-216-869
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 15:40:03.955581: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 15:40:04.031331: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:40:04.031357: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 15:40:04.455510: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:40:04.455573: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:40:04.455589: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 684-887-431
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 15:41:24.161531: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 15:41:24.236921: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:24.236949: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 15:41:24.663116: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:24.663175: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:24.663183: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 112-586-670
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 15:41:47.709307: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 15:41:47.785042: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:47.785068: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 15:41:48.213032: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:48.213098: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:48.213106: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 100-382-170
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 15:41:57.083807: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 15:41:57.159330: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:57.159356: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 15:41:57.581940: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:57.582000: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 15:41:57.582008: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 226-823-993
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 16:05:30.833912: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 16:05:30.910388: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:05:30.910417: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 16:05:31.339645: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:05:31.339712: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:05:31.339720: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 499-556-486
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 16:10:04.217819: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 16:10:04.294833: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:10:04.294859: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 16:10:04.722882: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:10:04.722941: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:10:04.722949: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 914-600-539
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/testdata/report_data/samples.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 16:13:28.849908: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 16:13:28.926697: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:13:28.926723: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 16:13:29.353412: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:13:29.353474: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 16:13:29.353482: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 858-936-975
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:54:54.821692: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:54:54.897114: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:54:54.897141: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:54:55.322685: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:54:55.322757: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:54:55.322767: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 950-417-094
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:55:57] "[35m[1mPOST /reports/query HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 382, in getReports
+    return jsonify(result), r_status
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type DataFrame is not JSON serializable
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:56:38.333333: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:56:38.410010: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:56:38.410037: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:56:38.840636: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:56:38.840699: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:56:38.840707: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 564-360-090
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:56:42] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:57:12.931156: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:57:13.007306: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:13.007332: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:57:13.435102: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:13.435172: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:13.435183: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 543-975-496
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:57:15] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:57:22.278876: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:57:22.355445: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:22.355471: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:57:22.779803: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:22.779865: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:22.779880: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 310-856-859
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:57:30.614779: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:57:30.691418: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:30.691443: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:57:31.119940: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:31.120000: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:57:31.120007: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 136-641-033
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:57:33] "[35m[1mPOST /reports/query HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 382, in getReports
+    return jsonify(result), r_status
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type DataFrame is not JSON serializable
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:58:08.353218: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:58:08.429618: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:58:08.429642: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:58:08.859582: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:58:08.859665: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:58:08.859675: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 704-165-480
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:58:12] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:59:02.298574: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:59:02.374652: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:02.374683: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:59:02.801234: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:02.801296: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:02.801304: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 101-304-781
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:59:05] "[35m[1mPOST /reports/query HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 379, in getReports
+    result = report_utils.query(body)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py", line 21, in query
+    reports = pd.read_csv("testdata/reports.csv")
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/pandas/util/_decorators.py", line 211, in wrapper
+    return func(*args, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/pandas/util/_decorators.py", line 331, in wrapper
+    return func(*args, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 950, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 605, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1442, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1735, in _make_engine
+    self.handles = get_handle(
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/pandas/io/common.py", line 856, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'testdata/reports.csv'
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:59:20.800962: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:59:20.877637: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:20.877665: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:59:21.305220: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:21.305290: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:21.305301: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 105-992-236
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:59:23] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 18:59:52.345732: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 18:59:52.422014: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:52.422039: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 18:59:52.849849: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:52.849917: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 18:59:52.849924: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 103-526-801
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 18:59:54] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:00:21.931689: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:00:22.008229: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:00:22.008254: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:00:22.432911: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:00:22.432971: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:00:22.432979: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 137-013-374
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 19:00:24] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:03:51.676869: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:03:51.752606: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:03:51.752631: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:03:52.173958: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:03:52.174020: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:03:52.174027: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 684-115-806
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 19:03:54] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:15:33.262749: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:15:33.338633: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:15:33.338660: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:15:33.763243: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:15:33.763301: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:15:33.763310: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 488-976-690
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:19:25.233519: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:19:25.309294: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:19:25.309326: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:19:25.733278: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:19:25.733339: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:19:25.733346: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 286-333-997
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 19:19:52] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:25:50.011124: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:25:50.088190: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:25:50.088217: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:25:50.517148: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:25:50.517210: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:25:50.517218: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 910-719-519
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:26:10.520056: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:26:10.595574: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:26:10.595600: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:26:11.016525: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:26:11.016587: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:26:11.016595: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 624-529-323
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:26:55.276246: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:26:55.354003: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:26:55.354028: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:26:55.776825: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:26:55.776888: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:26:55.776896: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 403-390-998
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 19:26:57] "POST /reports/query HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/report_utils.py', reloading
+INFO:werkzeug: * Restarting with stat
+2023-02-01 19:27:08.692165: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-02-01 19:27:08.768782: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:27:08.768810: I tensorflow/compiler/xla/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2023-02-01 19:27:09.197876: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:27:09.197934: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/cv2/../../lib64::/usr/local/cuda-10.1/lib64
+2023-02-01 19:27:09.197942: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 517-590-390
+INFO:werkzeug:10.175.221.98 - - [01/Feb/2023 19:27:11] "[35m[1mPOST /reports/query HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2548, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 382, in getReports
+    return jsonify(result), r_status
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/encoder.py", line 201, in encode
+    chunks = list(chunks)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/oracle/anaconda3/envs/satenv/lib/python3.8/site-packages/flask/json/provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type DataFrame is not JSON serializable
+INFO:werkzeug: * Detected change in '/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py', reloading
+INFO:werkzeug: * Restarting with stat
+  File "/home/oracle/satellite-imgs/sat-image-detection/python-webapp/webapp-flask_multithread_9001.py", line 382
+    return jsonify("reports": result), r_status
+                            ^
+SyntaxError: invalid syntax

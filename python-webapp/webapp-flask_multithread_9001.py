@@ -9,10 +9,17 @@ import json
 import base64
 import clu_util
 import ml_utils
+import report_utils
 import sat_utils
 from PIL import Image
 import os
 
+class ListEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, list):
+            return obj
+        return json.JSONEncoder.default(self, obj)
+        
 app = flask.Flask(__name__)
 
 CORS(app)
@@ -38,9 +45,9 @@ def detect():
     if 'imageData' not in body:
         return jsonify({'response': 'imageData required'}), status.HTTP_400_BAD_REQUEST
     if 'modelId' not in body:
-        return jsonify({'response': 'modelId required'}), status.HTTP_400_BAD_REQUEST
-    
-    modelId = body["modelId"]
+        modelId = 0
+    else:
+        modelId = body["modelId"]
     if not ml_utils.existsModel(modelId):
         return jsonify({'response': 'model ' + str(modelId) + ' does not exist'}), status.HTTP_400_BAD_REQUEST
     image = body ["imageData"]
@@ -350,7 +357,6 @@ def getStatus():
 
     return jsonify(result), r_status
 
-
 @app.route('/clusterData', methods=['POST'])
 def clusterData():
     result = {}
@@ -363,6 +369,24 @@ def clusterData():
     result['response'] = 'OK'
 
     return jsonify(result), r_status
+
+@app.route('/reports/query', methods=['POST'])
+def getReports():
+    result = {}
+    r_status = None
+
+    body = request.get_json(force=True)
+
+    for field in body:
+        if field not in report_utils.report_fields.values():
+            result['response'] = "Field " + field +"missing"
+            r_status = status.HTTP_400_BAD_REQUEST
+    else:
+        result = report_utils.query(body)
+        r_status = status.HTTP_200_OK
+
+    return jsonify({"reports": result}), r_status
+
 
 def appInit():
     ml_utils.createTrainingTree(0)
