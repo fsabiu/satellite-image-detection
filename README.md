@@ -1,5 +1,5 @@
-# sat-image-detection
-Repo to detect objects in satellite images - Back End
+# satellite-image-detection
+Back end of a web application that detects objects in satellite images
 
 
 ### Requirements
