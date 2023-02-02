@@ -379,13 +379,25 @@ def getReports():
 
     for field in body:
         if field not in report_utils.report_fields.values():
-            result['response'] = "Field " + field +"missing"
+            result['response'] = "Field " + field + " missing"
             r_status = status.HTTP_400_BAD_REQUEST
     else:
         result = report_utils.query(body)
         r_status = status.HTTP_200_OK
 
     return jsonify({"reports": result}), r_status
+
+@app.route('/reports/tags', methods=['POST'])
+def getTags():
+    r_status = status.HTTP_200_OK
+
+    filter = ''
+    body = request.get_json(force=True)
+    if 'search' in body:
+        filter = body['search']
+    
+    result = report_utils.getTags(filter)
+    return jsonify({"tags": result}), r_status
 
 
 def appInit():
